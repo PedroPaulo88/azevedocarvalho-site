@@ -1,0 +1,633 @@
+/* Azevedo Carvalho Advocacia — folha de estilo única
+   Tokens e escala conforme a seção 2 do documento de construção. */
+
+/* ---------------------------------------------------------------- tokens */
+
+:root {
+  --azul:    #0A2A50;
+  --salvia:  #7F9087;
+  --papel:   #F4F3F1;
+  --ardosia: #6C7D82;  /* declarado, não aplicado — ver nota abaixo */
+  --tinta:   #201F1D;
+  --branco:  #FFFFFF;
+
+  /* Ardósia sobre papel mede 3,87:1. A seção 2.1 admite a cor só a partir
+     de 18px, mas a escala da 2.2 fixa kicker em 13px e legenda em 15px, e
+     o mínimo de 4.5:1 só cede a 3:1 a partir de 24px. Kickers, legendas e
+     inscrições da OAB usam --azul (13:1), que resolve o contraste sem sair
+     da paleta. A hierarquia passa a vir do corpo, do tamanho e do
+     espacejamento, não da cor. */
+
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans:  "Lora", Georgia, "Times New Roman", serif;
+
+  --linha: 680px;   /* largura máxima de texto corrido, ~68 caracteres */
+  --area:  1120px;  /* largura máxima do contêiner */
+  --topo:  76px;    /* altura do cabeçalho fixo */
+}
+
+/* ------------------------------------------------------------------ base */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding-top: var(--topo);
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+img { max-width: 100%; height: auto; border: 0; }
+
+a { color: var(--azul); }
+
+:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 3px;
+}
+
+.escuro :focus-visible,
+.rodape :focus-visible {
+  outline-color: var(--branco);
+}
+
+/* Salto para o conteúdo, visível apenas ao receber foco de teclado. */
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--azul);
+  color: var(--branco);
+  padding: 12px 20px;
+  z-index: 200;
+}
+.pular:focus { left: 0; }
+
+/* ---------------------------------------------------------- tipografia */
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  color: var(--azul);
+  margin: 0;
+  font-weight: 500;
+}
+
+.display {
+  font-size: 52px;
+  line-height: 1.10;
+  font-weight: 500;
+}
+
+h1 { font-size: 44px; line-height: 1.15; }
+h2 { font-size: 32px; line-height: 1.20; }
+h3 { font-size: 23px; line-height: 1.30; font-weight: 600; }
+
+p { margin: 0 0 1.1em; max-width: var(--linha); }
+
+.kicker {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.40;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--azul);
+  margin: 0 0 20px;
+}
+
+.legenda {
+  font-size: 15px;
+  line-height: 1.50;
+  color: var(--azul);
+}
+
+.escuro .kicker,
+.escuro .legenda { color: var(--branco); }
+
+/* --------------------------------------------------- estrutura de página */
+
+.area {
+  max-width: var(--area);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.secao { padding: 88px 0; }
+
+.prosa { max-width: var(--linha); }
+.prosa h2 { margin: 56px 0 20px; }
+.prosa h3 { margin: 40px 0 12px; }
+.prosa h2:first-child,
+.prosa h3:first-child { margin-top: 0; }
+
+/* ----------------------------------------- elementos gráficos: 2 apenas */
+
+/* Filete — linha de 1px em sálvia. */
+.filete {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: var(--salvia);
+}
+
+/* Filete com losango ao centro — divisor de seção. */
+.divisor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+.divisor::before,
+.divisor::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--salvia);
+}
+.divisor span {
+  width: 7px;
+  height: 7px;
+  background: var(--salvia);
+  transform: rotate(45deg);
+}
+
+/* ---------------------------------------------------------------- botão */
+
+.botao {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 16px 30px;
+  background: var(--azul);
+  color: var(--branco);
+  border: 1px solid var(--azul);
+}
+
+.botao:hover,
+.botao:focus-visible {
+  background: var(--papel);
+  color: var(--azul);
+}
+
+/* Variante para uso sobre fundo azul. */
+.botao--claro {
+  background: transparent;
+  color: var(--branco);
+  border-color: var(--branco);
+}
+.botao--claro:hover,
+.botao--claro:focus-visible {
+  background: var(--branco);
+  color: var(--azul);
+}
+
+/* -------------------------------------------------------------- cabeçalho */
+
+.cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--papel);
+  border-bottom: 1px solid var(--salvia);
+}
+
+.cabecalho__area {
+  max-width: var(--area);
+  margin: 0 auto;
+  padding: 0 32px;
+  height: var(--topo);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.marca img { width: 38px; }
+
+.marca__nome {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--azul);
+}
+
+/* ------------------------------------------------------------ navegação */
+
+.nav { margin-left: auto; }
+
+.nav__lista {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__lista a {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--tinta);
+  white-space: nowrap;
+}
+
+.nav__lista a:hover,
+.nav__lista a[aria-current="page"] { color: var(--azul); }
+
+.nav__lista a[aria-current="page"] {
+  border-bottom: 1px solid var(--salvia);
+}
+
+/* Submenu de Atuação: abre no ponteiro e no foco de teclado. */
+.submenu { position: relative; }
+
+.submenu__gatilho {
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--tinta);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.submenu__gatilho:hover { color: var(--azul); }
+
+.submenu__painel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 18px);
+  left: -20px;
+  min-width: 320px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  background: var(--papel);
+  border: 1px solid var(--salvia);
+}
+
+.submenu:hover .submenu__painel,
+.submenu:focus-within .submenu__painel { display: block; }
+
+.submenu__painel a {
+  display: block;
+  padding: 9px 24px;
+  font-size: 16px;
+}
+
+.submenu__painel a:hover { background: var(--branco); }
+
+/* Botão do topo, no cabeçalho. */
+.cabecalho .botao {
+  font-size: 14px;
+  padding: 11px 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Abre o painel lateral no mobile. */
+.abrir-menu {
+  display: none;
+  margin-left: auto;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--azul);
+  background: none;
+  border: 1px solid var(--salvia);
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------- painel lateral */
+
+.painel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(86vw, 380px);
+  z-index: 150;
+  background: var(--papel);
+  border-left: 1px solid var(--salvia);
+  padding: 26px 30px 40px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+
+.painel[data-aberto="sim"] { transform: translateX(0); }
+
+.painel__topo {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.fechar-menu {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--azul);
+  background: none;
+  border: 1px solid var(--salvia);
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+.painel__lista {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+}
+
+.painel__lista > li { border-bottom: 1px solid var(--salvia); }
+
+.painel__lista a {
+  display: block;
+  padding: 15px 0;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.painel__titulo {
+  display: block;
+  padding: 15px 0 6px;
+  font-size: 13px;
+  line-height: 1.40;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--azul);
+}
+
+.painel__sub {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0 0 0 16px;
+}
+
+.painel__sub a { padding: 10px 0; font-size: 16px; }
+
+.veu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  background: rgba(32, 31, 29, 0.45);
+}
+
+.veu[data-aberto="sim"] { display: block; }
+
+/* ----------------------------------------------------------------- hero */
+
+.hero {
+  overflow: hidden;
+  padding: 104px 0 96px;
+}
+
+/* Duas colunas: o monograma nunca invade a coluna de texto. */
+.hero__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 380px);
+  gap: 48px;
+  align-items: center;
+}
+
+.hero__marca {
+  width: 100%;
+  margin-right: -90px;
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero__texto { max-width: 780px; }
+
+.hero .display { margin: 0 0 28px; }
+
+/* :not(.kicker) para não sobrescrever o tamanho do kicker por especificidade. */
+.hero p:not(.kicker) { font-size: 19px; margin-bottom: 36px; }
+
+/* ------------------------------------------------------ áreas de atuação */
+
+.areas { list-style: none; margin: 0; padding: 0; }
+
+.areas li { border-top: 1px solid var(--salvia); }
+.areas li:last-child { border-bottom: 1px solid var(--salvia); }
+
+.areas a {
+  display: block;
+  padding: 26px 0;
+  text-decoration: none;
+  color: var(--tinta);
+}
+
+.areas h3 { margin: 0 0 6px; }
+.areas p { margin: 0; max-width: 720px; }
+
+.areas a:hover h3,
+.areas a:focus-visible h3 { color: var(--tinta); }
+.areas a:hover h3 { text-decoration: underline; }
+
+/* ------------------------------------------------------- bloco escuro */
+
+.escuro {
+  background: var(--azul);
+  color: var(--branco);
+  padding: 104px 0;
+}
+
+.escuro h2 { color: var(--branco); max-width: 860px; }
+.escuro p { margin-top: 26px; }
+.escuro .botao { margin-top: 14px; }
+
+/* ------------------------------------------------------------ advogados */
+
+.advogados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 740px;
+  margin-top: 36px;
+}
+
+/* Retrato em 3x4. O arquivo original não é alterado: o enquadramento
+   é feito na exibição, ancorado no alto para preservar a cabeça. */
+.advogado img {
+  display: block;
+  width: 100%;
+  max-width: 270px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.advogado h3 { margin: 22px 0 2px; }
+
+.advogado .oab {
+  font-size: 15px;
+  line-height: 1.50;
+  color: var(--azul);
+  margin: 0 0 10px;
+}
+
+.advogado p { margin: 0; }
+
+/* ----------------------------------------------------------- contato */
+
+.canais {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  font-size: 17px;
+}
+
+.canais li { margin-bottom: 8px; }
+
+/* ------------------------------------------------------------- rodapé */
+
+.rodape {
+  background: var(--azul);
+  color: var(--branco);
+  padding: 72px 0 56px;
+  font-size: 15px;
+  line-height: 1.50;
+}
+
+.rodape a { color: var(--branco); }
+
+.rodape__marca { width: 68px; margin-bottom: 32px; }
+
+.rodape__grade {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 44px;
+}
+
+.rodape__nome {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 1.30;
+  color: var(--branco);
+  margin: 0 0 14px;
+}
+
+.rodape ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rodape li { margin-bottom: 7px; }
+
+.rodape__base {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--salvia);
+}
+
+/* --------------------------------------------- botão fixo, só no mobile */
+
+/* Verde e raio do WhatsApp: cor de marca do aplicativo, fora da paleta
+   da seção 2.1, por ser elemento de reconhecimento do canal. */
+.zap-fixo { display: none; }
+
+.zap-fixo svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--branco);
+}
+
+/* --------------------------------------------------------- ponto de quebra */
+
+@media (max-width: 860px) {
+  :root { --topo: 64px; }
+
+  body { font-size: 17px; }
+
+  .display { font-size: 34px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 25px; }
+  h3 { font-size: 20px; }
+
+  .kicker { font-size: 12px; }
+  .legenda, .rodape { font-size: 14px; }
+
+  .area, .cabecalho__area { padding: 0 22px; }
+
+  .secao { padding: 60px 0; }
+
+  .marca img { width: 32px; }
+  .marca__nome { font-size: 16px; letter-spacing: 0.16em; }
+
+  .nav, .cabecalho .botao { display: none; }
+  .abrir-menu { display: block; }
+
+  .hero { padding: 64px 0 60px; }
+  .hero__grade { display: block; }
+  .hero__marca { display: none; }
+  .hero p:not(.kicker) { font-size: 17px; }
+
+  .escuro { padding: 64px 0; }
+
+  /* Retratos permanecem lado a lado também no celular. */
+  .advogados { gap: 18px; margin-top: 28px; }
+
+  .rodape { padding: 56px 0 96px; }
+  .rodape__grade { grid-template-columns: 1fr; gap: 30px; }
+
+  /* Botão de WhatsApp fixo no canto inferior direito. */
+  .zap-fixo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 120;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #25D366;
+  }
+}
+
+/* Em telas muito estreitas duas colunas espremem demais a qualificação:
+   abaixo de 480px os retratos empilham. */
+@media (max-width: 480px) {
+  .advogados {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 300px;
+  }
+}
+
+/* ------------------------------------------------------- menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+  .painel { transition: none; }
+}

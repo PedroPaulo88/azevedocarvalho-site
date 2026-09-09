@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azevedocarvalho.adv.br/sitemap.xml

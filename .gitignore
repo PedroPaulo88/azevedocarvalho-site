@@ -1,0 +1,33 @@
+# Documento interno de construção do site.
+# Fora do repositório de propósito: o Cloudflare Pages serve como arquivo
+# estático tudo o que estiver no diretório publicado, e este documento traz
+# restrições regulatórias, decisões e pendências que não são conteúdo público.
+site-azevedo-carvalho.md
+
+# Pacote gerado para envio manual por FTP.
+*.zip
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.directory
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ferramentas locais
+.claude/

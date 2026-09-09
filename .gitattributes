@@ -1,0 +1,9 @@
+# Normaliza quebras de linha: LF no repositório, independente do sistema
+# onde o arquivo for editado. Evita diffs falsos entre Windows e Linux.
+* text=auto eol=lf
+
+# Binários: nunca converter.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.ico  binary
