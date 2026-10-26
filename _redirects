@@ -1,0 +1,4 @@
+# Cloudflare Pages: a aba "Conteúdo" passou a se chamar "Artigos" (out/2026).
+# Endereços antigos seguem funcionando, com redirecionamento permanente.
+/conteudo    /artigos/          301
+/conteudo/*  /artigos/:splat    301

@@ -1,3 +1,7 @@
 # Impede a listagem do conteúdo de pastas sem index.html — o caso de /atuacao/,
 # que existe só para agrupar as sete páginas e não tem página própria.
 Options -Indexes
+
+# A aba "Conteúdo" passou a se chamar "Artigos" (out/2026). Endereços antigos
+# redirecionam de forma permanente. O _redirects faz o mesmo no Cloudflare Pages.
+RedirectMatch 301 ^/conteudo(/.*)?$ /artigos$1
