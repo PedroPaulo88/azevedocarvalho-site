@@ -7,9 +7,13 @@
 # O valor vai sem virgula de proposito. "max-age=0, must-revalidate" foi
 # ignorado pelo Pages e a regra nao surtiu efeito.
 
+# ATENCAO: esta regra so vale depois de ajustar, no painel da Cloudflare,
+# Caching > Configuration > Browser Cache TTL para "Respect Existing
+# Headers". Enquanto o TTL da zona estiver fixo em 4 horas, ele sobrescreve
+# o valor abaixo e o unico recurso e o ?v= nas referencias do HTML.
+
 /css/*
   Cache-Control: no-cache
-  X-Regra-Css: aplicada
 
 /js/*
   Cache-Control: no-cache

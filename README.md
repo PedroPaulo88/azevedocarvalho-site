@@ -38,9 +38,11 @@ Cloudflare Pages os serve com 4 horas de cache enquanto o HTML vem sempre
 fresco — e quem ja visitou o site fica com HTML novo e estilo velho ate o
 cache vencer, o que na pratica quebra a pagina.
 
-Por isso nao e preciso mexer no `?v=` que acompanha `estilo.css` e
-`menu.js`: ele foi usado uma vez, para limpar as copias ja guardadas nos
-navegadores.
+**Enquanto isso nao for feito, bump obrigatorio:** toda vez que `estilo.css`
+ou `menu.js` mudarem, troque o `?v=` nas 13 paginas por uma data nova. Sem
+isso, quem ja visitou o site fica com o estilo velho por ate 4 horas.
+
+    sed -i "s/?v=[0-9]*/?v=$(date +%Y%m%d)/g" index.html */index.html */*/index.html
 
 ## Regras que valem para qualquer texto do site
 
