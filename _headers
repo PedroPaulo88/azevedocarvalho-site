@@ -9,6 +9,7 @@
 
 /css/*
   Cache-Control: no-cache
+  X-Regra-Css: aplicada
 
 /js/*
   Cache-Control: no-cache
