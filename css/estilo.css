@@ -21,7 +21,7 @@
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans:  "Lora", Georgia, "Times New Roman", serif;
 
-  --linha: 680px;   /* largura máxima de texto corrido, ~68 caracteres */
+  --linha: 640px;   /* largura máxima de texto corrido, ~64 caracteres */
   --area:  1120px;  /* largura máxima do contêiner */
   --topo:  76px;    /* altura do cabeçalho fixo */
 }
@@ -79,7 +79,7 @@ h1, h2, h3 {
 }
 
 .display {
-  font-size: 52px;
+  font-size: 64px;
   line-height: 1.10;
   font-weight: 500;
 }
@@ -118,7 +118,7 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
   padding: 0 32px;
 }
 
-.secao { padding: 88px 0; }
+.secao { padding: 112px 0; }
 
 .prosa { max-width: var(--linha); }
 .prosa h2 { margin: 56px 0 20px; }
@@ -450,17 +450,58 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
 .areas a:focus-visible h3 { color: var(--tinta); }
 .areas a:hover h3 { text-decoration: underline; }
 
+/* Variante em grade, usada na home. Sem caixa: a separação continua sendo
+   filete e espaço em branco, conforme a seção 2.3 do documento. As colunas
+   se ajustam sozinhas, sem precisar de novo ponto de quebra. */
+.areas--grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  column-gap: 48px;
+  margin-top: 44px;
+}
+
+.areas--grade li:last-child { border-bottom: 0; }
+.areas--grade a { padding: 24px 0 30px; }
+.areas--grade p { max-width: none; }
+
 /* ------------------------------------------------------- bloco escuro */
 
 .escuro {
   background: var(--azul);
   color: var(--branco);
-  padding: 104px 0;
+  padding: 112px 0;
 }
 
 .escuro h2 { color: var(--branco); max-width: 860px; }
 .escuro p { margin-top: 26px; }
 .escuro .botao { margin-top: 14px; }
+
+/* ------------------------------------------- faixa de artigos (sobre azul) */
+
+.artigos-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  column-gap: 48px;
+  margin: 44px 0 0;
+  padding: 0;
+}
+
+.artigos-lista li { border-top: 1px solid var(--salvia); }
+
+.artigos-lista a {
+  display: block;
+  padding: 24px 0 30px;
+  text-decoration: none;
+  color: var(--branco);
+}
+
+.artigos-lista h3 { color: var(--branco); margin: 0 0 8px; }
+.artigos-lista .legenda { margin: 0 0 10px; }
+.artigos-lista p { margin: 0; max-width: none; }
+.artigos-lista a:hover h3 { text-decoration: underline; }
+
+.escuro .escuro__rodape { margin-top: 40px; }
 
 /* ------------------------------------------------------------ advogados */
 
@@ -567,7 +608,7 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
 
   body { font-size: 17px; }
 
-  .display { font-size: 34px; }
+  .display { font-size: 40px; }
   h1 { font-size: 30px; }
   h2 { font-size: 25px; }
   h3 { font-size: 20px; }
@@ -577,7 +618,7 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
 
   .area, .cabecalho__area { padding: 0 22px; }
 
-  .secao { padding: 60px 0; }
+  .secao { padding: 76px 0; }
 
   .marca img { width: 32px; }
   .marca__nome { font-size: 16px; letter-spacing: 0.16em; }
@@ -590,7 +631,7 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
   .hero__marca { display: none; }
   .hero p:not(.kicker) { font-size: 17px; }
 
-  .escuro { padding: 64px 0; }
+  .escuro { padding: 76px 0; }
 
   /* Retratos permanecem lado a lado também no celular. */
   .advogados { gap: 18px; margin-top: 28px; }
