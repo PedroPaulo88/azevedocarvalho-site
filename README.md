@@ -31,6 +31,17 @@ arquivo de índice nem script: o que está escrito no HTML é o que vai ao ar.
 
 Depois, commit e push. O Cloudflare publica sozinho.
 
+## Cache
+
+O `_headers` faz CSS e JS serem revalidados a cada visita. Sem isso, o
+Cloudflare Pages os serve com 4 horas de cache enquanto o HTML vem sempre
+fresco — e quem ja visitou o site fica com HTML novo e estilo velho ate o
+cache vencer, o que na pratica quebra a pagina.
+
+Por isso nao e preciso mexer no `?v=` que acompanha `estilo.css` e
+`menu.js`: ele foi usado uma vez, para limpar as copias ja guardadas nos
+navegadores.
+
 ## Regras que valem para qualquer texto do site
 
 O documento de construção (`site-azevedo-carvalho.md`, fora do
