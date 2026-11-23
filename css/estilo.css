@@ -277,7 +277,6 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
 .submenu__gatilho:hover { color: var(--azul); }
 
 .submenu__painel {
-  display: none;
   position: absolute;
   top: calc(100% + 18px);
   left: -20px;
@@ -287,10 +286,32 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
   padding: 10px 0;
   background: var(--papel);
   border: 1px solid var(--salvia);
+
+  /* Continua no DOM, apenas invisível, para que o fechamento possa ter
+     atraso. O display:none anterior fechava no mesmo instante. */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 250ms, opacity 0s linear 250ms;
+}
+
+/* Ponte invisível sobre o vão de 18px entre o botão e a lista. Por ser
+   descendente de .submenu, o ponteiro que atravessa por ela mantém o
+   :hover ativo — era esse vão que fechava o menu no meio do caminho. */
+.submenu__painel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -18px;
+  height: 18px;
 }
 
 .submenu:hover .submenu__painel,
-.submenu:focus-within .submenu__painel { display: block; }
+.submenu:focus-within .submenu__painel {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
 
 .submenu__painel a {
   display: block;
@@ -534,17 +555,6 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
 }
 
 .advogado p { margin: 0; }
-
-/* ----------------------------------------------------------- contato */
-
-.canais {
-  list-style: none;
-  margin: 28px 0 0;
-  padding: 0;
-  font-size: 17px;
-}
-
-.canais li { margin-bottom: 8px; }
 
 /* ------------------------------------------------------------- rodapé */
 
