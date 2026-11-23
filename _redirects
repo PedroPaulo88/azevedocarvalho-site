@@ -2,3 +2,6 @@
 # Endereços antigos seguem funcionando, com redirecionamento permanente.
 /conteudo    /artigos/          301
 /conteudo/*  /artigos/:splat    301
+
+# Documento interno, nao faz parte do site publicado.
+/README.md   /   301
