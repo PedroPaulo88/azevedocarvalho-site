@@ -1,14 +1,18 @@
-# O Cloudflare Pages serve CSS e JS com 4 horas de cache por padrão. Como o
-# HTML vem sempre fresco (max-age=0), uma publicação que mude o estilo deixa
-# quem já visitou com HTML novo e CSS velho por até 4 horas — na prática, o
-# site quebrado. Aqui o navegador passa a revalidar sempre: quando nada muda
-# a resposta é um 304 de poucos bytes, e quando muda chega na hora.
+# O Cloudflare Pages serve CSS e JS com 4 horas de cache por padrao, enquanto
+# o HTML vem sempre fresco. Uma publicacao que mude o estilo deixa quem ja
+# visitou com HTML novo e CSS velho ate o cache vencer — na pratica, o site
+# quebrado. Com no-cache o navegador guarda o arquivo mas revalida antes de
+# usar: quando nada muda, a resposta e um 304 de poucos bytes.
+#
+# O valor vai sem virgula de proposito. "max-age=0, must-revalidate" foi
+# ignorado pelo Pages e a regra nao surtiu efeito.
+
 /css/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-cache
 
 /js/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-cache
 
-# Imagens e ícones são estáveis: valem cache longo.
+# Imagens e icones sao estaveis: valem cache longo.
 /imagens/*
   Cache-Control: public, max-age=2592000
