@@ -6,6 +6,17 @@
 <title>Política de privacidade — Azevedo Carvalho Advocacia</title>
 <meta name="description" content="Que informações este site registra, para que servem, por quanto tempo ficam e como exercer os direitos previstos na LGPD.">
 <link rel="canonical" href="https://azevedocarvalho.adv.br/politica-de-privacidade/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Azevedo Carvalho Advocacia">
+<meta property="og:title" content="Política de privacidade">
+<meta property="og:description" content="Que informações este site registra, para que servem, por quanto tempo ficam e como exercer os direitos previstos na LGPD.">
+<meta property="og:url" content="https://azevedocarvalho.adv.br/politica-de-privacidade/">
+<meta property="og:image" content="https://azevedocarvalho.adv.br/imagens/og-azevedo-carvalho.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azevedo Carvalho Advocacia">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -93,7 +104,8 @@
         <p>Esses registros servem para manter o site no ar, apurar falhas e proteger contra uso indevido. Não são utilizados para identificar quem visita nem para formar perfil de navegação.</p>
 
         <h2>Medição de audiência</h2>
-        <p>Se vier a ser adotada ferramenta de medição de audiência, será do tipo que não emprega cookies e não identifica o visitante. Caso passe a ser usada ferramenta que dependa de cookies, esta página será atualizada e a recusa será oferecida com o mesmo destaque do aceite, valendo a recusa como opção padrão.</p>
+        <p>Para saber quantas pessoas visitam o site e quais páginas são mais lidas, usamos o Cloudflare Web Analytics, ferramenta fornecida pela empresa que hospeda o site. Ela não emprega cookies, não identifica o visitante e não forma perfil de navegação. Registra apenas dados agregados, como as páginas acessadas, o site de onde o visitante veio, o país e o tipo de navegador e de dispositivo.</p>
+        <p>Caso passe a ser usada ferramenta que dependa de cookies, esta página será atualizada e a recusa será oferecida com o mesmo destaque do aceite, valendo a recusa como opção padrão.</p>
 
         <h2>Contato por WhatsApp e por e-mail</h2>
         <p>Os botões e os links deste site levam a WhatsApp e a e-mail. Ao escrever por esses canais, você transmite as informações que decidir incluir na mensagem, e elas passam a ser tratadas para a finalidade de atendimento: compreender a situação, responder e, havendo contratação, prestar o serviço.</p>
@@ -113,7 +125,7 @@
 
         <h2>Alterações</h2>
         <p>Esta página pode ser atualizada. A data da última alteração fica indicada abaixo.</p>
-        <p class="legenda">Última atualização: 9 de setembro de 2026.</p>
+        <p class="legenda">Última atualização: 24 de novembro de 2026.</p>
       </div>
     </div>
   </section>
@@ -163,20 +175,80 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Azevedo Carvalho Advocacia",
-  "url": "https://azevedocarvalho.adv.br/politica-de-privacidade/",
-  "image": "https://azevedocarvalho.adv.br/imagens/logotipo-vertical-1200.png",
-  "telephone": "+55-91-98093-6182",
-  "email": "contato@azevedocarvalho.adv.br",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Belém",
-    "addressRegion": "PA",
-    "addressCountry": "BR"
-  },
-  "areaServed": { "@type": "Country", "name": "Brasil" },
-  "sameAs": ["https://www.instagram.com/azevedocarvalhoadv"]
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://azevedocarvalho.adv.br/#escritorio",
+      "name": "Azevedo Carvalho Advocacia",
+      "url": "https://azevedocarvalho.adv.br/",
+      "logo": "https://azevedocarvalho.adv.br/imagens/monograma-600.png",
+      "image": "https://azevedocarvalho.adv.br/imagens/og-azevedo-carvalho.png",
+      "description": "Defesa em processos éticos e judiciais, revisão da documentação clínica e consultoria preventiva para médicos e clínicas.",
+      "telephone": "+55-91-98093-6182",
+      "email": "contato@azevedocarvalho.adv.br",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belém",
+        "addressRegion": "PA",
+        "addressCountry": "BR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "knowsAbout": [
+        "Direito médico",
+        "Sindicância no Conselho Regional de Medicina",
+        "Processo ético-profissional",
+        "Responsabilidade civil médica",
+        "Prontuário médico",
+        "Termo de consentimento informado",
+        "Publicidade médica"
+      ],
+      "founder": [
+        {
+          "@id": "https://azevedocarvalho.adv.br/#paulo-victor"
+        },
+        {
+          "@id": "https://azevedocarvalho.adv.br/#pedro-paulo"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/azevedocarvalhoadv"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://azevedocarvalho.adv.br/politica-de-privacidade/#pagina",
+      "url": "https://azevedocarvalho.adv.br/politica-de-privacidade/",
+      "name": "Política de privacidade — Azevedo Carvalho Advocacia",
+      "description": "Que informações este site registra, para que servem, por quanto tempo ficam e como exercer os direitos previstos na LGPD.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://azevedocarvalho.adv.br/#site"
+      },
+      "publisher": {
+        "@id": "https://azevedocarvalho.adv.br/#escritorio"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://azevedocarvalho.adv.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Política de privacidade",
+            "item": "https://azevedocarvalho.adv.br/politica-de-privacidade/"
+          }
+        ]
+      }
+    }
+  ]
 }
 </script>
 

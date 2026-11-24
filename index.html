@@ -6,6 +6,17 @@
 <title>Azevedo Carvalho Advocacia — direito médico</title>
 <meta name="description" content="Defesa em processos éticos e judiciais, revisão da documentação clínica e consultoria preventiva para médicos e clínicas, com atendimento direto pelos advogados responsáveis.">
 <link rel="canonical" href="https://azevedocarvalho.adv.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Azevedo Carvalho Advocacia">
+<meta property="og:title" content="Azevedo Carvalho Advocacia — direito médico">
+<meta property="og:description" content="Defesa em processos éticos e judiciais, revisão da documentação clínica e consultoria preventiva para médicos e clínicas, com atendimento direto pelos advogados responsáveis.">
+<meta property="og:url" content="https://azevedocarvalho.adv.br/">
+<meta property="og:image" content="https://azevedocarvalho.adv.br/imagens/og-azevedo-carvalho.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Azevedo Carvalho Advocacia">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -239,20 +250,128 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Azevedo Carvalho Advocacia",
-  "url": "https://azevedocarvalho.adv.br/",
-  "image": "https://azevedocarvalho.adv.br/imagens/logotipo-vertical-1200.png",
-  "telephone": "+55-91-98093-6182",
-  "email": "contato@azevedocarvalho.adv.br",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Belém",
-    "addressRegion": "PA",
-    "addressCountry": "BR"
-  },
-  "areaServed": { "@type": "Country", "name": "Brasil" },
-  "sameAs": ["https://www.instagram.com/azevedocarvalhoadv"]
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://azevedocarvalho.adv.br/#escritorio",
+      "name": "Azevedo Carvalho Advocacia",
+      "url": "https://azevedocarvalho.adv.br/",
+      "logo": "https://azevedocarvalho.adv.br/imagens/monograma-600.png",
+      "image": "https://azevedocarvalho.adv.br/imagens/og-azevedo-carvalho.png",
+      "description": "Defesa em processos éticos e judiciais, revisão da documentação clínica e consultoria preventiva para médicos e clínicas.",
+      "telephone": "+55-91-98093-6182",
+      "email": "contato@azevedocarvalho.adv.br",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belém",
+        "addressRegion": "PA",
+        "addressCountry": "BR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "knowsAbout": [
+        "Direito médico",
+        "Sindicância no Conselho Regional de Medicina",
+        "Processo ético-profissional",
+        "Responsabilidade civil médica",
+        "Prontuário médico",
+        "Termo de consentimento informado",
+        "Publicidade médica"
+      ],
+      "founder": [
+        {
+          "@id": "https://azevedocarvalho.adv.br/#paulo-victor"
+        },
+        {
+          "@id": "https://azevedocarvalho.adv.br/#pedro-paulo"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/azevedocarvalhoadv"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://azevedocarvalho.adv.br/#site",
+      "url": "https://azevedocarvalho.adv.br/",
+      "name": "Azevedo Carvalho Advocacia",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://azevedocarvalho.adv.br/#escritorio"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://azevedocarvalho.adv.br/#pagina",
+      "url": "https://azevedocarvalho.adv.br/",
+      "name": "Azevedo Carvalho Advocacia — direito médico",
+      "description": "Defesa em processos éticos e judiciais, revisão da documentação clínica e consultoria preventiva para médicos e clínicas, com atendimento direto pelos advogados responsáveis.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://azevedocarvalho.adv.br/#site"
+      },
+      "publisher": {
+        "@id": "https://azevedocarvalho.adv.br/#escritorio"
+      },
+      "about": {
+        "@id": "https://azevedocarvalho.adv.br/#escritorio"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://azevedocarvalho.adv.br/#paulo-victor",
+      "name": "Paulo Victor Azevedo Carvalho",
+      "jobTitle": "Advogado e sócio",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "OAB/PA",
+        "value": "25.056"
+      },
+      "image": "https://azevedocarvalho.adv.br/imagens/paulo-victor.jpeg",
+      "url": "https://azevedocarvalho.adv.br/o-escritorio/",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Centro Universitário do Pará (CESUPA)"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidade de Coimbra"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "IDDE"
+        }
+      ],
+      "worksFor": {
+        "@id": "https://azevedocarvalho.adv.br/#escritorio"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://azevedocarvalho.adv.br/#pedro-paulo",
+      "name": "Pedro Paulo Azevedo Carvalho",
+      "jobTitle": "Advogado e sócio",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "OAB/PA",
+        "value": "40.041"
+      },
+      "image": "https://azevedocarvalho.adv.br/imagens/pedro-paulo.jpeg",
+      "url": "https://azevedocarvalho.adv.br/o-escritorio/",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Centro Universitário do Pará (CESUPA)"
+        }
+      ],
+      "worksFor": {
+        "@id": "https://azevedocarvalho.adv.br/#escritorio"
+      }
+    }
+  ]
 }
 </script>
 

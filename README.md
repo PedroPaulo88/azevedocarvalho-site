@@ -15,7 +15,15 @@ arquivo de índice nem script: o que está escrito no HTML é o que vai ao ar.
 1. **Criar a página.** Duplique a pasta de um artigo existente, por
    exemplo `artigos/recebi-uma-notificacao-do-crm/`, renomeie com o
    endereço novo e troque o conteúdo. No `<head>`, ajuste o `<title>`, a
-   meta `description` e o `<link rel="canonical">`. Ao final do texto,
+   meta `description` e o `<link rel="canonical">`, e também as metas
+   `og:title`, `og:description`, `og:url`, `article:published_time` e
+   `article:modified_time`. No bloco JSON-LD do fim da página, ajuste os
+   endereços (`@id`, `url`), o `name` e a `description` da página, a
+   trilha (`breadcrumb`) e, no `BlogPosting`, `headline`, `description`,
+   `datePublished`, `dateModified`, `articleSection` e o autor (`#pedro-paulo`
+   ou `#paulo-victor`). Troque a mensagem do WhatsApp para dizer de qual
+   artigo o contato veio. Dentro do texto, coloque ao menos um link para a
+   página de atuação relacionada. Ao final do texto,
    assine com nome e inscrição na OAB — a seção 7 do documento de
    construção exige.
 
@@ -28,6 +36,23 @@ arquivo de índice nem script: o que está escrito no HTML é o que vai ao ar.
    Se já houver três, remova o mais antigo — a faixa mostra três.
 
 4. **Somar ao `sitemap.xml`.** Um bloco `<url>` com o endereço e a data.
+   Atualize também o `<lastmod>` de `/artigos/` e da home, que mudaram.
+
+Qualquer outra página que tiver o conteúdo alterado deve ter o `<lastmod>`
+atualizado no `sitemap.xml` com a data da alteração.
+
+## SEO e medição
+
+- **Dados estruturados.** Todas as páginas trazem um bloco JSON-LD com o
+  mesmo nó do escritório (`#escritorio`) e o nó próprio da página
+  (serviço, artigo, contato etc.). Os sócios têm nós `#paulo-victor` e
+  `#pedro-paulo`. Se mudar telefone, e-mail ou Instagram, mude em todas.
+- **Compartilhamento.** A imagem de prévia em links (WhatsApp, redes) é
+  `imagens/og-azevedo-carvalho.png`, 1200×630.
+- **Origem do contato.** Cada página tem mensagem própria no WhatsApp
+  ("Vim pelo site, pela página de…"). A da home é a padrão, sem página.
+- **Audiência.** Cloudflare Web Analytics, sem cookies, ativado no painel
+  da Cloudflare. A política de privacidade descreve o uso.
 
 Depois, commit e push. O Cloudflare publica sozinho.
 
