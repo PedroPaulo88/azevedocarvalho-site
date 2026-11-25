@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/estilo.css?v=20261124">
+<link rel="stylesheet" href="../../css/estilo.css?v=2026112402">
 </head>
 <body>
 
@@ -170,7 +170,7 @@
             <p>Na maioria dos casos, sim. A perícia é feita por um perito nomeado pelo juiz, e as partes podem indicar assistente técnico e apresentar quesitos no prazo de 15 dias contados da intimação da nomeação. É nessa fase que o trabalho do assistente técnico faz mais diferença.</p>
           </details>
           <details name="perguntas">
-            <summary>Vocês atendem médicos de outros estados?</summary>
+            <summary>Vocês atendem médicos de todos os estados?</summary>
             <p>Sim. Atendemos médicos em todo o Brasil. O processo judicial é eletrônico, o que permite acompanhar a ação à distância, com participação nas audiências por videoconferência ou presencialmente, quando necessário.</p>
           </details>
           <details name="perguntas">
@@ -179,7 +179,48 @@
           </details>
         </div>
       </div>
-      <a class="botao botao--fim" href="https://wa.me/5591980936182?text=Ol%C3%A1.%20Vim%20pelo%20site%2C%20pela%20p%C3%A1gina%20de%20defesa%20em%20a%C3%A7%C3%A3o%20de%20indeniza%C3%A7%C3%A3o%2C%20e%20gostaria%20de%20falar%20com%20um%20advogado.">Falar com o escritório</a>
+      <div class="fale fale--pagina">
+        <h2>Fale com o escritório</h2>
+        <p>Conte em poucas linhas o que aconteceu. A mensagem fica pronta para você conferir e enviar pelo WhatsApp.</p>
+        <form class="form-contato" data-numero="5591980936182" data-origem="pela página de defesa em ação de indenização" novalidate>
+          <div class="campos">
+            <div class="campo campo--largo">
+              <label for="fc-nome">Nome</label>
+              <input id="fc-nome" name="nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="campo">
+              <label for="fc-perfil">Você é</label>
+              <select id="fc-perfil" name="perfil" required><option value="">Selecione</option><option>Médico(a)</option><option>Clínica</option></select>
+            </div>
+            <div class="campo">
+              <label for="fc-especialidade">Especialidade <span class="opcional">(opcional)</span></label>
+              <input id="fc-especialidade" name="especialidade" type="text">
+            </div>
+            <div class="campo">
+              <label for="fc-estado">Estado <span class="opcional">(opcional)</span></label>
+              <select id="fc-estado" name="estado"><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select>
+            </div>
+            <div class="campo">
+              <label for="fc-assunto">Assunto</label>
+              <select id="fc-assunto" name="assunto" required><option value="">Selecione</option><option>Notificação do CRM</option><option selected>Ação judicial</option><option>Documentação e termos de consentimento</option><option>Publicidade médica</option><option>Assessoria para clínica</option><option>Contratos</option><option>Outro</option></select>
+            </div>
+            <div class="campo campo--data" hidden>
+              <label for="fc-data">Data em que recebeu a notificação</label>
+              <input id="fc-data" name="data" type="date">
+            </div>
+            <div class="campo campo--largo">
+              <label for="fc-mensagem">Mensagem <span class="opcional">(opcional)</span></label>
+              <textarea id="fc-mensagem" name="mensagem" rows="4" maxlength="600" placeholder="Em poucas linhas, o que aconteceu."></textarea>
+            </div>
+          </div>
+          <p class="previa-rotulo">Prévia da mensagem</p>
+          <pre class="previa-texto" aria-live="polite"></pre>
+          <button class="botao" type="submit">Enviar pelo WhatsApp</button>
+          <p class="form-nota">O WhatsApp abre com a mensagem pronta, e nada é enviado antes de você confirmar. Não é preciso incluir nome ou dados de paciente nesta primeira conversa.</p>
+        </form>
+        <p class="fale-direto">Prefere ir direto, sem preencher nada?</p>
+        <a class="botao botao--contorno" href="https://wa.me/5591980936182?text=Ol%C3%A1.%20Vim%20pelo%20site%2C%20pela%20p%C3%A1gina%20de%20defesa%20em%20a%C3%A7%C3%A3o%20de%20indeniza%C3%A7%C3%A3o%2C%20e%20gostaria%20de%20falar%20com%20um%20advogado.">Falar com o escritório</a>
+      </div>
     </div>
   </section>
 
@@ -364,7 +405,7 @@
         },
         {
           "@type": "Question",
-          "name": "Vocês atendem médicos de outros estados?",
+          "name": "Vocês atendem médicos de todos os estados?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sim. Atendemos médicos em todo o Brasil. O processo judicial é eletrônico, o que permite acompanhar a ação à distância, com participação nas audiências por videoconferência ou presencialmente, quando necessário."
@@ -384,7 +425,9 @@
 }
 </script>
 
-<script src="../../js/menu.js?v=20261124"></script>
+<script src="../../js/menu.js?v=2026112402"></script>
+
+<script src="../../js/formulario.js?v=2026112402"></script>
 
 </body>
 </html>

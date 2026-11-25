@@ -53,6 +53,11 @@ atualizado no `sitemap.xml` com a data da alteração.
   ("Vim pelo site, pela página de…"). A da home é a padrão, sem página.
 - **Audiência.** Cloudflare Web Analytics, sem cookies, ativado no painel
   da Cloudflare. A política de privacidade descreve o uso.
+- **Formulário de contato.** Na home e no fim das páginas de atuação.
+  Não envia nada a servidor: `js/formulario.js` monta a mensagem e abre o
+  WhatsApp para o visitante conferir e enviar. O `data-origem` do `<form>`
+  diz de qual página veio, e cada página de atuação já deixa o assunto
+  pré-selecionado. A política de privacidade descreve esse funcionamento.
 
 Depois, commit e push. O Cloudflare publica sozinho.
 

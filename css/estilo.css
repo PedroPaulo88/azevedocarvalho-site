@@ -844,3 +844,79 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
   .secao--base-curta { padding-bottom: 40px; }
   .secao--topo-curto { padding-top: 40px; }
 }
+
+/* ------------------------------------------------- formulário de contato */
+
+.fale { max-width: var(--linha); }
+.fale--pagina { margin-top: 72px; }
+.fale--home { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--salvia); }
+.fale h2 { margin: 0 0 14px; }
+.fale h3 { margin: 0 0 10px; font-weight: 500; }
+
+.form-contato { margin-top: 28px; }
+.campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+.campo { display: flex; flex-direction: column; }
+.campo--largo { grid-column: 1 / -1; }
+.campo[hidden] { display: none; }
+.campo label {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--azul);
+  margin-bottom: 6px;
+}
+.opcional { color: var(--tinta); opacity: 0.7; }
+.campo input,
+.campo select,
+.campo textarea {
+  font-family: var(--sans);
+  font-size: 17px;
+  color: var(--tinta);
+  background: var(--branco);
+  border: 1px solid var(--salvia);
+  border-radius: 0;
+  padding: 11px 12px;
+  width: 100%;
+}
+/* Seta do select em SVG, na cor Azul; sem a seta nativa de cada sistema. */
+.campo select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%230A2A50' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.campo textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus { outline: 2px solid var(--azul); outline-offset: 0; border-color: var(--azul); }
+.campo :invalid:not(:focus):not(:placeholder-shown) { border-color: var(--salvia); }
+
+.previa-rotulo { font-size: 15px; color: var(--azul); margin: 26px 0 6px; }
+.previa-texto {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  background: var(--branco);
+  border-left: 1px solid var(--salvia);
+  color: var(--tinta);
+}
+.form-nota { font-size: 15px; line-height: 1.5; color: var(--azul); margin: 16px 0 0; }
+
+.fale-direto { margin: 40px 0 14px; }
+.botao--contorno { background: transparent; color: var(--azul); }
+.botao--contorno:hover,
+.botao--contorno:focus-visible { background: var(--azul); color: var(--branco); }
+
+@media (max-width: 640px) {
+  .campos { grid-template-columns: 1fr; }
+  .fale--pagina { margin-top: 56px; }
+}
