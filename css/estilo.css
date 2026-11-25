@@ -773,3 +773,74 @@ p { margin: 0 0 1.1em; max-width: var(--linha); }
 @media (prefers-reduced-motion: reduce) {
   .painel { transition: none; }
 }
+
+/* ------------------------------------------- tópicos, passos e perguntas */
+
+/* Tópicos dentro do texto (Como atuamos, Como funciona): em destaque pela
+   serifa, pelo tamanho e pela cor, nunca pelo negrito. */
+.prosa h3 { font-weight: 500; }
+
+.prosa ol { padding-left: 1.4em; margin: 0 0 20px; }
+.prosa ol li { margin-bottom: 18px; padding-left: 6px; }
+.prosa ol li::marker {
+  color: var(--azul);
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 500;
+}
+.prosa ol h3 { margin: 0 0 6px; }
+.prosa ol p { margin: 0; }
+
+/* Perguntas frequentes: <details> nativo com name, uma aberta por vez.
+   Separadas por filete; o marcador é o losango da identidade, vazado
+   fechado e cheio aberto. */
+.perguntas { margin-top: 8px; }
+.perguntas details { border-top: 1px solid var(--salvia); }
+.perguntas details:last-child { border-bottom: 1px solid var(--salvia); }
+.perguntas summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding: 20px 40px 20px 0;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--azul);
+}
+.perguntas summary::-webkit-details-marker { display: none; }
+.perguntas summary::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  border: 1px solid var(--azul);
+  transform: rotate(45deg);
+}
+.perguntas details[open] summary::after { background: var(--azul); }
+.perguntas summary:hover { text-decoration: underline; }
+.perguntas details p { margin: 0 0 16px; }
+.perguntas details p:last-child { margin-bottom: 24px; }
+
+/* Botão que fecha a página, dentro da própria seção de conteúdo:
+   sem divisor nem seção extra antes dele. */
+.botao--fim { margin-top: 56px; }
+
+@media (max-width: 860px) {
+  .perguntas summary { font-size: 19px; }
+  .prosa ol li::marker { font-size: 20px; }
+  .botao--fim { margin-top: 40px; }
+}
+
+/* Seções em sequência separadas por divisor, quando o espaço cheio dos dois
+   lados sobra (fim do artigo, antes da chamada para contato). */
+.secao--base-curta { padding-bottom: 56px; }
+.secao--topo-curto { padding-top: 56px; }
+
+@media (max-width: 860px) {
+  .secao--base-curta { padding-bottom: 40px; }
+  .secao--topo-curto { padding-top: 40px; }
+}

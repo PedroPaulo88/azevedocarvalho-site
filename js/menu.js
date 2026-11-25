@@ -1,4 +1,4 @@
-/* Painel lateral do mobile. Único script do site. */
+/* Painel lateral do mobile e perguntas frequentes. Único script do site. */
 (function () {
   var abrir  = document.querySelector(".abrir-menu");
   var fechar = document.querySelector(".fechar-menu");
@@ -26,5 +26,19 @@
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && painel.dataset.aberto === "sim") alterna(false);
+  });
+})();
+
+/* Perguntas frequentes: uma aberta por vez. O atributo name dos <details>
+   já faz isso nos navegadores atuais; isto cobre os antigos. */
+(function () {
+  var itens = document.querySelectorAll(".perguntas details");
+  Array.prototype.forEach.call(itens, function (d) {
+    d.addEventListener("toggle", function () {
+      if (!d.open) return;
+      Array.prototype.forEach.call(itens, function (o) {
+        if (o !== d && o.open) o.open = false;
+      });
+    });
   });
 })();
